@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gidana App - Automated Financial Transaction Management</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        main {
+            margin-top: 100px;
+            padding: 60px 20px;
+        }
+        
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+        }
+        
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        
+        .feature p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .cta {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 40px 0;
+        }
+        
+        .button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        footer {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            color: #666;
+        }
+        
+        .footer-links {
+            margin: 20px 0;
+        }
+        
+        .footer-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .security-badges {
+            margin: 30px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: #f8f9fa;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 40px 20px;
+            }
+            
+            .hero h2 {
+                font-size: 32px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">G</div>
+                <h1>Gidana App</h1>
+            </div>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <div class="hero">
+                <h2>Automated Financial Transaction Management</h2>
+                <p>
+                    Seamlessly sync, categorize, and manage your financial transactions across all your accounts. 
+                    Built for businesses and individuals who want to automate their bookkeeping.
+                </p>
+            </div>
+            
+            <div class="features">
+                <div class="feature">
+                    <div class="emoji">🏦</div>
+                    <h3>Bank Connection</h3>
+                    <p>
+                        Securely connect all your financial institutions including American Express, Chase, 
+                        Citizens Bank, SoFi, and more through Plaid's secure infrastructure.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="emoji">🤖</div>
+                    <h3>AI-Powered Categorization</h3>
+                    <p>
+                        Our intelligent system automatically categorizes your transactions, 
+                        learning from your patterns to improve accuracy over time.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="emoji">📊</div>
+                    <h3>Seamless Integration</h3>
+                    <p>
+                        Export directly to Xero, QuickBooks, or your preferred spreadsheet application. 
+                        Keep your accounting software always up-to-date.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="emoji">🔒</div>
+                    <h3>Bank-Level Security</h3>
+                    <p>
+                        Your financial data is encrypted and secured using industry-standard protocols. 
+                        We never store your banking credentials.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="emoji">⚡</div>
+                    <h3>Real-Time Sync</h3>
+                    <p>
+                        Transactions sync automatically throughout the day, ensuring your financial 
+                        picture is always current and accurate.
+                    </p>
+                </div>
+                
+                <div class="feature">
+                    <div class="emoji">📈</div>
+                    <h3>Smart Insights</h3>
+                    <p>
+                        Get intelligent insights into your spending patterns, cash flow trends, 
+                        and financial health with automated reporting.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cta">
+                <h2>Ready to Automate Your Financial Management?</h2>
+                <p style="margin: 20px 0; color: #666;">
+                    Connect your accounts securely through our platform and start saving hours on bookkeeping.
+                </p>
+                <a href="#" class="button" onclick="alert('Please use the Plaid Link integration to connect your accounts.'); return false;">
+                    Get Started
+                </a>
+            </div>
+            
+            <div class="security-badges">
+                <div class="badge">🔐 256-bit Encryption</div>
+                <div class="badge">✓ Plaid Secured</div>
+                <div class="badge">🛡️ Read-Only Access</div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#privacy">Privacy Policy</a>
+                <a href="#terms">Terms of Service</a>
+                <a href="#security">Security</a>
+                <a href="mailto:erikfoley0@gmail.com">Contact</a>
+            </div>
+            
+            <p style="margin-top: 20px;">
+                © 2025 Gidana App. All rights reserved.
+            </p>
+            
+            <p style="margin-top: 10px; font-size: 14px;">
+                Gidana App uses Plaid services to securely connect to financial institutions. 
+                By using this service, you agree to Plaid's privacy policy and terms of service.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Simple Privacy Policy Section (hidden by default) -->
+    <script>
+        // Handle privacy/terms links
+        document.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (link.getAttribute('href') === '#privacy') {
+                    e.preventDefault();
+                    alert('Privacy Policy: We use bank-level encryption to protect your data. We only access transaction data in read-only mode and never store your banking credentials. Your data is used solely for transaction categorization and accounting purposes.');
+                } else if (link.getAttribute('href') === '#terms') {
+                    e.preventDefault();
+                    alert('Terms of Service: This service is provided as-is for personal and business accounting automation. Users are responsible for verifying transaction categorizations. We are not liable for any accounting discrepancies.');
+                } else if (link.getAttribute('href') === '#security') {
+                    e.preventDefault();
+                    alert('Security: All connections are encrypted using TLS 1.3. We use Plaid\'s secure infrastructure for bank connections. No banking credentials are ever stored on our servers.');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
